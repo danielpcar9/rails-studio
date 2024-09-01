@@ -1,0 +1,21 @@
+<%= form_with(model: @genre, local: true, class: "genre-form") do |form| %>
+  <% if @genre.errors.any? %>
+    <div id="error_explanation" class="error-messages">
+      <h2><%= pluralize(@genre.errors.count, "error") %> this genre could not be saved!</h2>
+      <ul>
+        <% @genre.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name, "Name of Genre" %>
+    <%= form.text_field :name, class: "form-input" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "submit-button" %>
+  </div>
+<% end %>

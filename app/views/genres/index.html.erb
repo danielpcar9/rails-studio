@@ -1,0 +1,11 @@
+<h1>Genres</h1>
+
+<%= link_to 'New Genre', new_genre_path, class: "button" %>
+
+<ul class="genres-list">
+  <% @genres.each do |genre| %>
+    <li class="genre-item">
+      <%= link_to genre.name, genre_path(genre.slug), class: "genre-name" %>
+    </li>
+  <% end %>
+</ul>
